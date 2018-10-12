@@ -1,4 +1,4 @@
-###Sikuli Test Framework
+### Sikuli Test Framework
 
 The purpose of using Sikuli is to automate using image recognition.
 
@@ -11,14 +11,10 @@ Another useful use can be in visual validation where the presenation of the UI i
 To run the tests simply install the dependencies with
 
 ```
-mvn clean intall
-```
- and then run the tests using
-
-```
+mvn clean install
 mvn clean test
 ```
 
-###Contributions
+### Contributions
 
 When contributing please ensure that your commit messages are as descriptive as possible. Keeping the first line to a maximum of 72 characters.
