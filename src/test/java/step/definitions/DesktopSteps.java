@@ -1,9 +1,13 @@
 package step.definitions;
 
 import config.SikuliConfiguration;
+import cucumber.api.PendingException;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
 import org.sikuli.script.FindFailed;
+import org.sikuli.script.Key;
 import org.sikuli.script.Region;
 import org.sikuli.script.Screen;
 
@@ -11,13 +15,12 @@ import java.util.logging.Logger;
 
 public class DesktopSteps {
 
-    private Screen screen;
+    private Screen screen = new Screen();
     Logger logger = Logger.getLogger(Hooks.class.getName());
 
 
     @Before
     public void setConfig() throws Exception {
-        screen = new Screen();
         SikuliConfiguration.setSikuliSettings();
     }
 
@@ -54,5 +57,10 @@ public class DesktopSteps {
             Region nextPlace = new Region((int)x,(int)y);
             screen.mouseMove(nextPlace);
         }
+    }
+
+    @When("^I enter \"([^\"]*)\"$")
+    public void iEnter(String arg0) throws Throwable {
+        screen.type(arg0+ Key.ENTER);
     }
 }
